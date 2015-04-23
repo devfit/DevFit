@@ -1,4 +1,0 @@
-DevFit
-======
-
-Fitness App
