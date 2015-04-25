@@ -2,7 +2,6 @@
 Fitness App
 
 TODO
-* Backend Scaffold - MEAN stack?
 * Ui Scaffold
   * Angular
   * Ionic
