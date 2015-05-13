@@ -1,14 +1,25 @@
-<!-- Center content -->
-<ion-side-menu-content class="home-module">
-    <ion-header-bar class="bar-dark">
-        <button class="button button-icon" ng-click="vm.toggleSideBar()">
-            <i class="icon ion-navicon"></i>
-        </button>
-        <h1 class="title">Buscar</h1>
-    </ion-header-bar>
-    <ion-content scroll="false">
-        <div>
-            Blah!!
-        </div>
-    </ion-content>
-</ion-side-menu-content>
+<div class="home-module">
+    <ion-nav-bar class="bar-calm" align-title="center">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear">
+                <i class="ion-android-more-vertical"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-tabs class="tabs-icon tabs-calm">
+        <ion-tab title="Lifts" icon="icon-deadlift-fail" href="#/home/lifts">
+            <ion-nav-view name="lifts-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Assistance" icon="icon-curl2" href="#/home/assistance">
+            <ion-nav-view name="assistance-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Edit" icon="icon-barbell" href="#/home/edit">
+            <ion-nav-view name="edit-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Track" icon="icon-lift-calendar" href="#/home/track">
+            <ion-nav-view name="track-tab"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</div>

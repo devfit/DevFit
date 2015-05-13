@@ -21,7 +21,7 @@
     })
 
     .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/home/lifts");
     }])
 
     .controller('AppController', function($scope) {

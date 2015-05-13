@@ -17,11 +17,8 @@
 	 * The dependencies block here is also where component dependencies should be
 	 * specified, as shown below.
 	 */
-	angular.module('devfit.home', [
-		'devfit.home.lifts',
-		'devfit.home.track',
-		'devfit.home.edit',
-		'devfit.home.assistance'
+	angular.module('devfit.home.track', [
+		// Load any modules that is related to home here
 	])
 
 	/**
@@ -30,20 +27,23 @@
 	 * this way makes each module more "self-contained".
 	 */
 	.config(function config($stateProvider) {
-		$stateProvider.state('home', {
-			abstract: true,
-			url: '/home',
-			controller: 'HomeCtrl as vm',
-			templateUrl: 'home/home.tpl.html'
+		$stateProvider.state('home.track', {
+			url: '/track',
+			views: {
+				'track-tab': {
+					controller: 'TrackCtrl as vm',
+					templateUrl: 'home/track/track.tpl.html'
+				}
+			}
 		});
 	})
 
 	/**
 	 * @ngInject
 	 */
-	.controller('HomeCtrl', HomeCtrl);
+	.controller('TrackCtrl', TrackCtrl);
 
-	function HomeCtrl($ionicSideMenuDelegate) {
+	function TrackCtrl() {
 		var vm = this;
 		/*
 		 *********************************************************
@@ -56,6 +56,7 @@
 			defineScopeVars();
 			defineScopeFunctions();
 			defineListeners();
+
 		}
 
 		/*
@@ -77,9 +78,7 @@
 		 *********************************************************
 		 */
 		function defineScopeFunctions() {
-			vm.toggleSideBar = function() {
-				$ionicSideMenuDelegate.toggleLeft();
-			};
+
 		}
 
 		/*
@@ -90,6 +89,8 @@
 		 *********************************************************
 		 */
 		function defineListeners() {}
+
+
 
 
 		// Initialize controller
