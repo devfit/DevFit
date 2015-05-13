@@ -3,14 +3,15 @@
  * See styleguide @ https://github.com/toddmotto/angularjs-styleguide
  */
 (function() {
-    angular.module('boilerplate-app', [
+    angular.module('devfit', [
         'ionic',
         'ngCordova',
         'templates-app',
         'templates-common',
+        'app.config',
 
         // Insert modules here
-        'boilerplate-app.home'
+        'devfit.home'
     ])
 
     .run(function($ionicPlatform, $cordovaSplashscreen) {

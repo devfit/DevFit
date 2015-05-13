@@ -1,8 +1,8 @@
 {
-  "author": "Axel Pompa",
-  "name": "Ionic-ng-boilerplate",
+  "author": "devfit team",
+  "name": "devfit",
   "version": "0.0.1",
-  "homepage": "http://ionic-ng-boilerplate.com.ar",
+  "homepage": "https://github.com/devfit/DevFit",
   "licenses": {
     "type": "MIT",
     "url": ""
@@ -10,7 +10,7 @@
   "bugs": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apompa/ionic-ng-boilerplate"
+    "url": "https://github.com/devfit/DevFit"
   },
   "dependencies": {},
   "devDependencies": {

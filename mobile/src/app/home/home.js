@@ -17,7 +17,7 @@
 	 * The dependencies block here is also where component dependencies should be
 	 * specified, as shown below.
 	 */
-	angular.module('boilerplate-app.home', [
+	angular.module('devfit.home', [
 		// Load any modules that is related to home here
 	])
 
