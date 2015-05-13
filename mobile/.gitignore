@@ -1,6 +1,10 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
-
+*.sw*
+*~
+build/
+vendor/
 node_modules/
-platforms/
-plugins/
+.idea
+.sass-cache/
+src/app/app-config.js
+resources
+.DS_Store

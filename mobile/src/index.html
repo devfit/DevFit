@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="boilerplate-app" lang="en" ng-strict-di>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ionic ng boilerplate</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- compiled CSS -->
+    <% styles.forEach( function ( file ) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+    <!-- 404 during development -->
+    <script src="cordova.js"></script>
+</head>
+
+<body ng-controller="AppController">
+    <ion-side-menus>
+        <ion-nav-view></ion-nav-view>
+        <div ng-include="'sidebar.tpl.html'"></div>
+    </ion-side-menus>
+
+    <!-- compiled JavaScript -->
+    <% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+</body>
+
+</html>
