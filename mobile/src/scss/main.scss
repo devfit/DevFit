@@ -3,7 +3,7 @@
  * Twitter Bootstrap. We must include it last so we can overwrite any variable
  * definitions in our imported stylesheets.
  */
-
+@import 'material-colors.scss';
 @import 'variables.scss';
 
 
@@ -14,6 +14,7 @@
 */
 
 @import '../../vendor/ionic/scss/ionic.scss';
+@import '../../vendor/font-awesome/scss/font-awesome.scss';
 
 
 

@@ -94,7 +94,7 @@ module.exports = {
             'vendor/momentjs/moment.js'
         ],
         css: [
-            
+
         ],
         fonts: [
             'vendor/ionic/fonts/*',

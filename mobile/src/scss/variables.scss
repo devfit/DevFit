@@ -4,4 +4,10 @@
  */
 
 
-$ionicons-font-path: "fonts" !default;
+$ionicons-font-path: 				"fonts" !default;
+$fa-font-path:       				"fonts" !default;
+
+// Overrides of vendor/ionic/scss/_variables.scss
+// Note: overriding default values will require restarting grunt
+$base-color:                    	$light-black !default;
+
