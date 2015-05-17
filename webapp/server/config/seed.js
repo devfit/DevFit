@@ -5,45 +5,89 @@
 
 'use strict';
 
-var Thing = require('../api/thing/thing.model');
-var User = require('../api/user/user.model');
+var mongoose = require('mongoose');
+var UserSchema = require('../api/user/user.model');
+var User = mongoose.model('User', UserSchema);
+var LiftSchema = require('../api/lift/lift.model');
+var Lift = mongoose.model('Lift', LiftSchema);
 
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
-});
+var clearUsers = function() {
+  console.log('Clearing User Data');
+  return User.remove({}).exec();
+};
 
-User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
-  }, function() {
-      console.log('finished populating users');
+var clearLifts = function() {
+  console.log('Clearing Lifts');
+  return Lift.remove({}).exec();
+}
+
+var createTestLifts = function(users) {
+  var lifts = [
+    {
+      userId: users[0]._id,
+      name: 'Bench Press',
+      lifts:[
+        {
+          weight: 135,
+          reps: 5,
+          date: Date.now()
+        }
+      ]
+    },
+    {
+      userId: users[0]._id,
+      name: 'Squat',
+      lifts:[
+        {
+          weight: 225,
+          reps: 5,
+          date: Date.now()
+        }
+      ]
     }
-  );
-});
+  ]
+
+  return Lift.collection.insert(lifts, function(err, docs) {
+    if (err) {
+      console.log('Lifts seed failed');
+    } else {
+      console.log(docs);
+    }
+  });
+};
+
+var createTestUsers = function(callback) {
+  var users = [
+    {
+      provider: 'local',
+      name: 'Test User',
+      email: 'test@test.com',
+      password: 'test'
+    }, {
+      provider: 'local',
+      role: 'admin',
+      name: 'Admin',
+      email: 'admin@admin.com',
+      password: 'admin'
+    }
+  ];
+
+  User.collection.insert(users, callback)
+};
+
+var createData = function() {
+  createTestUsers(function(err, docs) {
+    if (err) {
+
+    } else {
+      console.log(docs);
+      createTestLifts(docs);
+    }
+  });
+};
+
+exports.seedData = function() {
+    return clearUsers()
+      .then(clearLifts())
+      .then(createData());
+};
