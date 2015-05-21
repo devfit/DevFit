@@ -1,0 +1,13 @@
+@import 'lifts/lifts.scss';
+@import 'edit/edit.scss';
+@import 'track/track.scss';
+@import 'assistance/assistance.scss';
+
+.home-module {
+	.tab-item {
+		.icon {
+			font-size: 20px !important;
+			height: 10px !important;
+		}
+	}
+}

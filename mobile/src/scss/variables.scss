@@ -1,0 +1,13 @@
+/**
+ * These are the variables used throughout the application. This is where 
+ * overwrites that are not specific to components should be maintained.
+ */
+
+
+$ionicons-font-path: 				"fonts" !default;
+$fa-font-path:       				"fonts" !default;
+
+// Overrides of vendor/ionic/scss/_variables.scss
+// Note: overriding default values will require restarting grunt
+$base-color:                    	$light-black !default;
+
