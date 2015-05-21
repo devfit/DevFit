@@ -8,3 +8,4 @@ node_modules/
 src/app/app-config.js
 resources
 .DS_Store
+www/

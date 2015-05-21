@@ -19,6 +19,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-filerev');
   grunt.loadNpmTasks('grunt-ng-constant');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-jscs');
 
   /**
    * Load in our build configuration file.
@@ -324,6 +325,8 @@ module.exports = function(grunt) {
         loopfunc: true,
         curly: true,
         "-W065": true,
+        "-W099": false,
+        smarttabs: true,
         immed: true,
         newcap: true,
         noarg: true,
@@ -342,6 +345,13 @@ module.exports = function(grunt) {
 
 
         }
+      }
+    },
+
+    jscs: {
+      src: '<%= app_files.js %>',
+      options: {
+        config: ".jscsrc"
       }
     },
 
@@ -485,7 +495,7 @@ module.exports = function(grunt) {
         files: [
           '<%= app_files.js %>'
         ],
-        tasks: ['jshint:src', 'karma:unit:run', 'copy:build_appjs', 'ngAnnotate']
+        tasks: ['jscs:src', 'jshint:src', 'karma:unit:run', 'copy:build_appjs', 'ngAnnotate']
       },
 
       /**
@@ -648,7 +658,7 @@ module.exports = function(grunt) {
    * The `build` task gets your app ready to run for development and testing.
    */
   grunt.registerTask('build', [
-    'clean:build', 'html2js', 'jshint', 'sass:build',
+    'clean:build', 'html2js', 'jscs', 'jshint', 'sass:build',
     'concat:build_css', 'clean:aux', 'copy:build_app_assets', 'copy:build_vendor_assets', 'copy:build_vendor_fonts',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
     'karma:continuous', 'ngAnnotate'

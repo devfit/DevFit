@@ -87,8 +87,8 @@ module.exports = {
             'vendor/angular-resource/angular-resource.js',
             'vendor/angular-sanitize/angular-sanitize.js',
             'vendor/angular-ui-router/release/angular-ui-router.js',
-            'vendor/ionic/js/ionic.js',
-            'vendor/ionic/js/ionic-angular.js',
+            'vendor/ionic/release/js/ionic.js',
+            'vendor/ionic/release/js/ionic-angular.js',
             'vendor/ngCordova/dist/ng-cordova.js',
             'vendor/lodash/lodash.js',
             'vendor/momentjs/moment.js'
@@ -97,7 +97,7 @@ module.exports = {
 
         ],
         fonts: [
-            'vendor/ionic/fonts/*',
+            'vendor/ionic/release/fonts/*',
             'vendor/font-awesome/fonts/*'
         ],
         assets: []

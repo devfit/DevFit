@@ -1,8 +1,8 @@
-describe( 'AppCtrl', function() {
-    describe( 'isADummyTest', function() {
+describe('AppCtrl', function() {
+  describe('isADummyTest', function() {
 
-        it( 'should pass a dummy test', inject( function() {
-            expect( true ).toBeTruthy();
-        }));
-    });
+    it('should pass a dummy test', inject(function() {
+      expect(true).toBeTruthy();
+    }));
+  });
 });
