@@ -4,3 +4,5 @@ dist
 .sass-cache
 .project
 .DS_Store
+.idea/
+npm-debug.log
